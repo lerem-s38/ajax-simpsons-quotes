@@ -32,7 +32,7 @@
         <h1 class="title">The Simpsons quotes</h1>
 
         <div class="content" id="simpsons"></div>
-        <div class="button">A new quote ? click here !</div>
+        <div class="button">click refresh</div>
       </div>
     </section>
 
@@ -57,6 +57,7 @@
         <h2><strong>${quote[0].character}</strong></h2>
         <img src="${quote[0].image}" />
         <blockquote>${quote[0].quote}</blockquote>
+        <blockquote>${quote[0].characterDirection}</blockquote>
       `;
             document.querySelector('#simpsons').innerHTML = quoteHtml;
           });
