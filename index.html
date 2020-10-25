@@ -34,7 +34,6 @@
         <div class="content" id="simpsons"></div>
         <div class="button">A new quote ? click here !</div>
       </div>
-      </div>
     </section>
 
     <!-- We need to load axios first! -->
@@ -44,6 +43,7 @@
       crossorigin="anonymous"
     ></script>
     <script>
+      // This function loads quotes data from the simpsons  API
       function fetchSimpsonsQuotes() {
         const url = `https://simpsons-quotes-api.herokuapp.com/quotes`;
         axios
@@ -51,16 +51,14 @@
           .then(function (response) {
             return response.data;
           })
-          .then(function (quotes) {
-            console.log('data decoded from JSON:', pokemon);
-
+          .then(function (quote) {
             // Build a block of HTML
             const quoteHtml = `
         <h2><strong>${quote[0].character}</strong></h2>
         <img src="${quote[0].image}" />
         <blockquote>${quote[0].quote}</blockquote>
       `;
-            document.querySelector('#pokemon').innerHTML = pokemonHtml;
+            document.querySelector('#simpsons').innerHTML = quoteHtml;
           });
       }
 
